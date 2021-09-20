@@ -229,13 +229,15 @@
                 android:textSize="34sp" />
 
             <Button
-                style="@style/BoutonOperation"
                 android:id="@+id/butVirgule"
+                style="@style/BoutonOperation"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@drawable/ic_launcher_background"
+                android:backgroundTintMode="add"
                 android:text=","
-                android:textSize="34sp" />
+                android:textSize="48sp" />
 
             <Button
                 style="@style/BoutonOperation"
