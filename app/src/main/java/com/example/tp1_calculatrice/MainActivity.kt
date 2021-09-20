@@ -2,20 +2,24 @@ package com.example.tp1_calculatrice
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
+import com.example.tp1_calculatrice.models.Calcul
+import com.example.tp1_calculatrice.models.Operation
+import kotlin.math.log
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var affCalcul : TextView
     private var selectCalcul = 'x'
     private var savedCalc : Float? = null
-    private lateinit var
+    private var calcul : Calcul = Calcul()
+    private var nombreEcrit = "0"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.calculator)
-
         var tableChiffres = arrayOf (
             findViewById<Button>(R.id.but0),
             findViewById<Button>(R.id.but1),
@@ -72,7 +76,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         butEgal.setOnClickListener{
-            saveOne('=')
+            calculer()
         }
 
         butNegation.setOnClickListener{
@@ -82,85 +86,83 @@ class MainActivity : AppCompatActivity() {
 
     fun clickChiffre(i: Int){
         this.affCalcul.setText(this.affCalcul.text.toString() + i.toString())
+        nombreEcrit += i.toString()
     }
 
     fun clickReset(){
-        this.savedCalc = null
+        this.nombreEcrit = "0"
         this.affCalcul.setText("")
     }
 
-    fun saveOne(strCalc: Char){
-        var str = this.affCalcul.text
-        var varCalc = arrayOf('+', '-', '%', 'x', '/')
-        //System.out.println("CALC --- " + savedCalc)
-
-        if(savedCalc == null) { //Si aucun nombre enregistré, on enregistre le 1er nombre
-            this.selectCalcul = strCalc
-            var nbr = ""
-
-            var i = 0
-            var test = true
-            while (i < str.length && test) {
-                if (!varCalc.contains(str[i])) {
-                    nbr += str[i]
-                } else {
-                    test = false
-                }
-                i++
-            }
-            if(nbr.length > 0){
-                this.savedCalc = nbr.toFloat()
-            }
-        } else {            //Deja un nombre enregistre
-            if(str.length != 0){
-                var nbrCalc = 0.0f
-
-                var i = 0
-                var test = true
-                while (i < str.length && test) {
-                    if (varCalc.contains(str[i])) {
-                        test = false
-                    }
-                    i++
-                }
-                test = true
-                var secNbrS = ""
-                while (i < str.length && test) {
-                    if (!varCalc.contains(str[i])) {
-                        secNbrS += str[i]
-                    } else {
-                        test = false
-                    }
-                    i++
-                }
-                var secNbr = secNbrS.toFloat()
-
-                if(selectCalcul == '+'){
-                    nbrCalc = savedCalc!! + secNbr
-                } else if(selectCalcul == '-'){
-                    nbrCalc = savedCalc!! - secNbr
-                } else if(selectCalcul == 'x'){
-                    nbrCalc = savedCalc!! * secNbr
-                } else if(selectCalcul == '/'){
-                    nbrCalc = savedCalc!! / secNbr
-                } else if(selectCalcul == '%'){
-                    nbrCalc = savedCalc!! % secNbr
-                }
-
-                this.affCalcul.text = nbrCalc.toInt().toString()
-                if(varCalc.contains(strCalc)){
-                    this.savedCalc = nbrCalc
-                    this.selectCalcul = strCalc
-                } else {
-                    this.savedCalc = null
-                }
-            }
-        }
-        if(varCalc.contains(strCalc)){
-            this.affCalcul.setText(this.affCalcul.text.toString() + strCalc)
+    fun ajoutOperation(strCalc: Char)
+    {
+        if(strCalc == '+'){
+            calcul.operation = Operation.ADDITION
+        } else if(strCalc == '-'){
+            calcul.operation = Operation.SOUSTRACTION
+        } else if(strCalc == 'x'){
+            calcul.operation = Operation.MULTIPLICATION
+        } else if(strCalc == '/'){
+            calcul.operation = Operation.DIVISION
+        } else if(strCalc == '%'){
+            calcul.operation = Operation.MODULO
         }
     }
 
+    fun saveOne(strCalc: Char){
+
+        // Il y a déjà une opération écrite
+        if(calcul.operation != Operation.VIDE)
+        {
+            // On sauvegarde le deuxième nombre
+            calcul.deuxiemeNb = nombreEcrit.toFloat()
+            affCalcul.setText(calcul.resultatToString() + strCalc)
+
+            // On remet à 0 le nombre écrit
+            nombreEcrit = "0"
+            // On sauvegarde l'opération
+            ajoutOperation(strCalc)
+        }
+        // Il n'y a pas d'opération écrite
+        else
+        {
+            // On sauvegarde le premier nombre
+            calcul.premierNb= nombreEcrit.toFloat()
+            affCalcul.setText(affCalcul.text.toString() + strCalc)
+            // On sauvegarde l'opération
+            ajoutOperation(strCalc)
+            nombreEcrit = "0"
+        }
+    }
+
+    fun calculer()
+    {
+        if(calcul.operation != Operation.VIDE)
+        {
+
+
+            // On sauvegarde le deuxième nombre
+            calcul.deuxiemeNb = nombreEcrit.toFloat()
+
+
+            Log.d("1er", calcul.premierNb.toString())
+            Log.d("Op", calcul.operation.name)
+            Log.d("2em", calcul.deuxiemeNb.toString())
+
+            Log.d("nbEcrit", nombreEcrit)
+
+
+            var result = calcul.resultatToString()
+            if(result != null)
+            {
+                affCalcul.setText(result)
+
+                // On met le résultat en tant que nombre écris
+                nombreEcrit = result
+            }
+
+        }
+    }
     fun getPremierNombre()
     {
 

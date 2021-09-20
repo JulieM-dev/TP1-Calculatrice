@@ -5,7 +5,7 @@ import java.text.DecimalFormat
 class Calcul {
 
     var premierNb: Float = 0F
-    lateinit var operation: Operation
+    var operation: Operation = Operation.VIDE
     var deuxiemeNb: Float = 0F
 
     fun resultat(): Float {
@@ -23,7 +23,7 @@ class Calcul {
             }
         }
         premierNb = resultat
-        operation = Operation.ADDITION
+        operation = Operation.VIDE
         deuxiemeNb = 0F
         return resultat
     }
