@@ -34,6 +34,7 @@
             android:layout_weight="1"
             android:orientation="horizontal">
 
+            <FrameLayout style="@style/FrameButton">
             <Button
                 style="@style/BoutonOperation"
                 android:id="@+id/butAC"
@@ -42,33 +43,40 @@
                 android:layout_weight="1"
                 android:text="AC"
                 android:textSize="24sp" />
+            </FrameLayout>
 
-            <Button
-                style="@style/BoutonOperation"
-                android:id="@+id/butDivise"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="/"
-                android:textSize="34sp" />
+            <FrameLayout style="@style/FrameButton">
+                <Button
+                    style="@style/BoutonOperation"
+                    android:id="@+id/butDivise"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="/"
+                    android:textSize="34sp" />
+            </FrameLayout>
 
-            <Button
-                style="@style/BoutonOperation"
-                android:id="@+id/butMultiplie"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="X"
-                android:textSize="34sp" />
+            <FrameLayout style="@style/FrameButton">
+                <Button
+                    style="@style/BoutonOperation"
+                    android:id="@+id/butMultiplie"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="X"
+                    android:textSize="34sp" />
+            </FrameLayout>
 
-            <Button
-                style="@style/BoutonOperation"
-                android:id="@+id/butSuppr"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="Suppr"
-                android:textSize="14sp" />
+            <FrameLayout style="@style/FrameButton">
+                <Button
+                    style="@style/BoutonOperation"
+                    android:id="@+id/butSuppr"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Suppr"
+                    android:textSize="14sp" />
+            </FrameLayout>
         </LinearLayout>
 
         <LinearLayout
@@ -77,86 +85,49 @@
             android:layout_weight="1"
             android:orientation="horizontal">
 
-            <Button
-                style="@style/BoutonChiffre"
-                android:id="@+id/but7"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="7"
-                android:textSize="34sp" />
+            <FrameLayout style="@style/FrameButton">
+                <Button
+                    android:id="@+id/but7"
+                    style="@style/BoutonChiffre"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="7"
+                    android:textSize="34sp" />
+            </FrameLayout>
 
-            <Button
-                android:id="@+id/but8"
-                style="@style/BoutonChiffre"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="8"
-                android:textSize="34sp" />
+            <FrameLayout style="@style/FrameButton">
+                <Button
+                    android:id="@+id/but8"
+                    style="@style/BoutonChiffre"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="8"
+                    android:textSize="34sp" />
+            </FrameLayout>
 
-            <Button
-                android:id="@+id/but9"
-                style="@style/BoutonChiffre"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="9"
-                android:textSize="34sp" />
+            <FrameLayout style="@style/FrameButton">
+                <Button
+                    android:id="@+id/but9"
+                    style="@style/BoutonChiffre"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="9"
+                    android:textSize="34sp" />
+            </FrameLayout>
 
-            <Button
-                style="@style/BoutonOperation"
-                android:id="@+id/butMoins"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="-"
-                android:textSize="48sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <Button
-
-                android:id="@+id/but4"
-                style="@style/BoutonChiffre"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="4"
-                android:textSize="34sp" />
-
-            <Button
-                android:id="@+id/but5"
-                style="@style/BoutonChiffre"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="5"
-                android:textSize="34sp" />
-
-            <Button
-                android:id="@+id/but6"
-                style="@style/BoutonChiffre"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="6"
-                android:textSize="34sp" />
-
-            <Button
-                style="@style/BoutonOperation"
-                android:id="@+id/butPlus"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="+"
-                android:textSize="34sp" />
+            <FrameLayout style="@style/FrameButton">
+                <Button
+                    style="@style/BoutonOperation"
+                    android:id="@+id/butMoins"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="-"
+                    android:textSize="48sp" />
+            </FrameLayout>
 
         </LinearLayout>
 
@@ -166,41 +137,49 @@
             android:layout_weight="1"
             android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/but1"
-                style="@style/BoutonChiffre"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="1"
-                android:textSize="34sp" />
+            <FrameLayout style="@style/FrameButton">
+                <Button
+                    android:id="@+id/but4"
+                    style="@style/BoutonChiffre"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="4"
+                    android:textSize="34sp" />
+            </FrameLayout>
 
-            <Button
-                android:id="@+id/but2"
-                style="@style/BoutonChiffre"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="2"
-                android:textSize="34sp" />
+            <FrameLayout style="@style/FrameButton">
+                <Button
+                    android:id="@+id/but5"
+                    style="@style/BoutonChiffre"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="5"
+                    android:textSize="34sp" />
+            </FrameLayout>
 
-            <Button
-                android:id="@+id/but3"
-                style="@style/BoutonChiffre"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="3"
-                android:textSize="34sp" />
+            <FrameLayout style="@style/FrameButton">
+                <Button
+                    android:id="@+id/but6"
+                    style="@style/BoutonChiffre"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="6"
+                    android:textSize="34sp" />
+            </FrameLayout>
 
-            <Button
-                style="@style/BoutonOperation"
-                android:id="@+id/butNegation"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="+/-"
-                android:textSize="24sp" />
+            <FrameLayout style="@style/FrameButton">
+                <Button
+                    style="@style/BoutonOperation"
+                    android:id="@+id/butPlus"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="+"
+                    android:textSize="34sp" />
+            </FrameLayout>
 
         </LinearLayout>
 
@@ -210,43 +189,103 @@
             android:layout_weight="1"
             android:orientation="horizontal">
 
-            <Button
-                style="@style/BoutonOperation"
-                android:id="@+id/butModulo"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="Mod"
-                android:textSize="20sp" />
+            <FrameLayout style="@style/FrameButton">
+                <Button
+                    android:id="@+id/but1"
+                    style="@style/BoutonChiffre"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="1"
+                    android:textSize="34sp" />
+            </FrameLayout>
 
-            <Button
-                android:id="@+id/but0"
-                style="@style/BoutonChiffre"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="0"
-                android:textSize="34sp" />
+            <FrameLayout style="@style/FrameButton">
+                <Button
+                    android:id="@+id/but2"
+                    style="@style/BoutonChiffre"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="2"
+                    android:textSize="34sp" />
+            </FrameLayout>
 
-            <Button
-                android:id="@+id/butVirgule"
-                style="@style/BoutonOperation"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/ic_launcher_background"
-                android:backgroundTintMode="add"
-                android:text=","
-                android:textSize="48sp" />
+            <FrameLayout style="@style/FrameButton">
+                <Button
+                    android:id="@+id/but3"
+                    style="@style/BoutonChiffre"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="3"
+                    android:textSize="34sp" />
+            </FrameLayout>
 
-            <Button
-                style="@style/BoutonOperation"
-                android:id="@+id/butEgal"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="="
-                android:textSize="24sp" />
+            <FrameLayout style="@style/FrameButton">
+                <Button
+                    style="@style/BoutonOperation"
+                    android:id="@+id/butNegation"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="+/-"
+                    android:textSize="24sp" />
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <FrameLayout style="@style/FrameButton">
+                <Button
+                    style="@style/BoutonOperation"
+                    android:id="@+id/butModulo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Mod"
+                    android:textSize="20sp" />
+            </FrameLayout>
+
+            <FrameLayout style="@style/FrameButton">
+                <Button
+                    android:id="@+id/but0"
+                    style="@style/BoutonChiffre"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="0"
+                    android:textSize="34sp" />
+            </FrameLayout>
+
+            <FrameLayout style="@style/FrameButton">
+                <Button
+                    android:id="@+id/butVirgule"
+                    style="@style/BoutonOperation"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/ic_launcher_background"
+                    android:backgroundTintMode="add"
+                    android:text=","
+                    android:textSize="48sp" />
+            </FrameLayout>
+
+            <FrameLayout style="@style/FrameButton">
+                <Button
+                    style="@style/BoutonEgal"
+                    android:id="@+id/butEgal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="="
+                    android:textSize="24sp" />
+            </FrameLayout>
         </LinearLayout>
     </LinearLayout>
 
