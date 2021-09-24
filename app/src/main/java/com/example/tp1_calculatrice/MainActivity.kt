@@ -53,6 +53,10 @@ class MainActivity : AppCompatActivity() {
             clickReset()
         }
 
+        butSuppr.setOnClickListener{
+            clickSuppr()
+        }
+
         butPlus.setOnClickListener{
             clickOperation('+')
         }
@@ -80,6 +84,10 @@ class MainActivity : AppCompatActivity() {
         butNegation.setOnClickListener{
             clickNeg()
         }
+
+        butVirgule.setOnClickListener{
+            clickVirgule()
+        }
     }
 
     fun clickChiffre(i: Int){
@@ -90,6 +98,12 @@ class MainActivity : AppCompatActivity() {
     fun clickReset(){
         this.affCalcul.setText("")
         this.calcul.reset()
+        refreshAffichage()
+    }
+
+    fun clickSuppr(){
+        calcul.retire()
+        refreshAffichage()
     }
 
     fun ajoutOperation(strCalc: Char)
@@ -131,6 +145,11 @@ class MainActivity : AppCompatActivity() {
         calcul.negatifChange()
         refreshAffichage()
 
+    }
+
+    fun clickVirgule(){
+        calcul.ajoutDecimal()
+        refreshAffichage()
     }
 
     fun refreshAffichage()

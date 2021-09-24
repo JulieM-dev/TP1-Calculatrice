@@ -109,6 +109,18 @@ class Calcul {
         }
     }
 
+    fun ajoutDecimal()
+    {
+        if(operation == Operation.VIDE)
+        {
+            premierNb.ajoute(",")
+        }
+        else
+        {
+            deuxiemeNb.ajoute(",")
+        }
+    }
+
     override fun toString(): String {
         return premierNb.toString() + operation.toString() + deuxiemeNb.toString()
     }

@@ -42,7 +42,7 @@ class Nombre {
         {
             if(decimal.length >1)
             {
-                decimal.removeRange(decimal.length-2, decimal.length-1)
+                decimal = decimal.dropLast(1)
             }
             else
             {
@@ -51,7 +51,7 @@ class Nombre {
         }
         else if (value.length > 1)
         {
-            value.removeRange(value.length-2, value.length-1)
+            value = value.dropLast(1)
         }
         else if(value == "" && negatif)
         {
