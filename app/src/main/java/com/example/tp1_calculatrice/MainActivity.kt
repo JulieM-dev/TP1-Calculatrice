@@ -2,12 +2,10 @@ package com.example.tp1_calculatrice
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import com.example.tp1_calculatrice.models.Calcul
 import com.example.tp1_calculatrice.models.Operation
-import kotlin.math.log
 
 class MainActivity : AppCompatActivity() {
 
@@ -85,7 +83,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun clickChiffre(i: Int){
-        calcul.ajoute(i.toChar())
+        calcul.ajoute(i.toString())
         refreshAffichage()
     }
 
@@ -130,12 +128,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun clickNeg(){
-        nombreEcrit = (nombreEcrit.toInt() * -1).toString()
-        if(calcul.operation != Operation.VIDE)
-        {
-            affCalcul.setText(calcul.premierNb.toString() + calcul.operation.toString())
-        }
-        affCalcul.setText("-" + affCalcul.text.toString())
+        calcul.negatifChange()
+        refreshAffichage()
 
     }
 

@@ -1,24 +1,34 @@
 package com.example.tp1_calculatrice.models
 
+import android.util.Log
+
 class Nombre {
-    var value= ""
+    var value : String = ""
     var estDecimal= false
     var negatif = false
     var decimal = ""
 
-    fun ajoute(ch : Char)
+    fun ajoute(st: String)
     {
-        if(ch == ',')
+        if(st == ",")
         {
             estDecimal = true
         }
         else if(estDecimal)
         {
-            decimal += ch
+            decimal += st
         }
         else
         {
-            value += ch
+            if(value.length == 0)
+            {
+                value = st
+            }
+            else
+            {
+                value += st
+            }
+
         }
     }
 
@@ -80,6 +90,11 @@ class Nombre {
     fun set(nb: Float)
     {
         // TODO: 22/09/2021
+    }
+
+    fun negatifChange()
+    {
+        negatif = !negatif
     }
 
     fun clear()

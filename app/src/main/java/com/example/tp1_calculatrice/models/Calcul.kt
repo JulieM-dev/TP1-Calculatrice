@@ -69,15 +69,15 @@ class Calcul {
         return dec.format(resultat())
     }
 
-    fun ajoute(ch: Char)
+    fun ajoute(st: String)
     {
         if(operation == Operation.VIDE)
         {
-            premierNb.ajoute(ch)
+            premierNb.ajoute(st)
         }
         else
         {
-            deuxiemeNb.ajoute(ch)
+            deuxiemeNb.ajoute(st)
         }
     }
 
@@ -94,6 +94,18 @@ class Calcul {
         else
         {
             deuxiemeNb.retire()
+        }
+    }
+
+    fun negatifChange()
+    {
+        if(operation == Operation.VIDE)
+        {
+            premierNb.negatifChange()
+        }
+        else
+        {
+            deuxiemeNb.negatifChange()
         }
     }
 
